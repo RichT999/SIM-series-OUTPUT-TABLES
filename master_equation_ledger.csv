@@ -1,0 +1,112 @@
+Equation_ID,Formulation,Description,System_Module,Active_Status
+EQ-001,"T = f(\rho_m, \rho_E, \sigma, \theta, \Phi, \mathbf{B}, \mathbf{E})","Total Field-Medium Stress Tensor function","PROP-CORE",TRUE
+EQ-002,"\frac{\partial T}{\partial t} \to 0","Thermal/pressure gradient temporal stabilization","PROP-CORE",TRUE
+EQ-003,"\nabla T > \Gamma_{breach}","Spatial stress gradient boundary breach condition","PROP-CORE",TRUE
+EQ-004,"\alpha \cdot T \approx \kappa","Coupling efficacy coefficient balancing constant","PROP-CORE",TRUE
+EQ-005,"S = \frac{E_{meas}}{E_{ref}}","Phase coherence alignment scale metric","EM-FIELD",TRUE
+EQ-006,"\frac{dS}{dt} > \Lambda_{rec}","Coherence recovery velocity threshold","EM-FIELD",TRUE
+EQ-007,"R_{\gamma} = \int_{\mathcal{C}} w(s)\,\chi_{corridor}(s)\,ds","Q-Proxy corridor resonance integral","EM-FIELD",TRUE
+EQ-008,"\mathcal{P}_{\gamma} = \int (\mathbf{E} \times \mathbf{B}) \cdot d\ell","Poynting signal flux phase track line-integral","EM-FIELD",TRUE
+EQ-009,"\frac{dt_{obs}}{dt_{ref}} \approx 1","Absolute coordinate time rate baseline (Rigid Grid)","KINEMATICS",TRUE
+EQ-010,"L_{meas} \approx L_{ref}","Non-deformable reference frame length baseline","KINEMATICS",TRUE
+EQ-011,"\mathbf{V} = [\Delta E, \Delta q, \Delta s, \Delta \mathbf{p}, \Delta B, \Delta L]","State-vector variance mapping array","DIAGNOSTICS",TRUE
+EQ-012,"\mathcal{D}_i : P_i(env) = g(\mathbf{B}, \mathbf{E}, \rho_m, T, \alpha)","Localized environment parameter density distribution","DIAGNOSTICS",TRUE
+EQ-013,"\Omega_{eff} = \Omega_0 \cdot (1 + \beta T + \gamma \alpha)","Effective rotational modulation frequency response","ROT-DYNAMICS",TRUE
+EQ-014,"\left\langle \frac{dE}{dx} \right\rangle_{coalition}","Total energy loss gradient profile across medium","PROP-CORE",TRUE
+EQ-015,"\Delta_{\mu,e,p} = \left\langle \frac{dE}{dx} \right\rangle_{\mu} - \left\langle \frac{dE}{dx} \right\rangle_{e,p}","Lepton vs baryon energy loss drift asymmetry","PROP-CORE",TRUE
+EQ-016,"V(\phi) = \tfrac{1}{2} m_{\phi}^2 \phi^2 + \lambda \phi^4 + \eta \phi T","Scalar potential multi-phase energy distribution","SCALAR-FIELD",TRUE
+EQ-017,"\rho_{overlay} = \tfrac{1}{2} \dot{\phi}^2 + V(\phi)","Overlay mass-density simulation field injection","SCALAR-FIELD",TRUE
+EQ-018,"\omega_{\gamma} > \omega_{p} \cdot \Theta(T, \mathbf{B}, \rho_m)","Plasma frequency cutoff propagation constraint","EM-FIELD",TRUE
+EQ-019,"\tau = \int \sigma(\nu)\,n(s)\,ds","Integrated optical depth/opacity medium footprint","EM-FIELD",TRUE
+EQ-020,"D_{eff} = D_0 \cdot \Psi(T, \alpha, \rho_m, \mathbf{B})","Effective diffusion coefficient stabilization factor","MHD-CORE",TRUE
+EQ-021,"\mathbf{J} = -D_{eff} \nabla n","Diffusive current transport vector (drift elimination)","MHD-CORE",TRUE
+EQ-022,"E = \frac{m}{\mu \cdot \varepsilon} \cdot \Xi(T, \alpha, \mathbf{B}, \mathbf{E})","Medium-modified local mass energy state function","PROP-CORE",TRUE
+EQ-023,"E_{legacy} = mc^2","Legacy un-modified limiting boundary equation","PROP-CORE",TRUE
+EQ-024,"\frac{d\theta}{dt} = \Upsilon(T, \alpha, \rho_E, \rho_m)","Phase angle progression/evolution velocity","PROP-CORE",TRUE
+EQ-025,"\theta \in \{\theta_{init}, \theta_{growth}, \theta_{sat}, \theta_{breach}, \theta_{rec}\}","Discrete state-machine step index flags","DIAGNOSTICS",TRUE
+EQ-026,"\frac{\Delta f}{f} = \frac{\Delta\Phi}{c^2}","Legacy gravitational frequency shift reference","OBSERVER-LAYER",TRUE
+EQ-027,"\Delta f = \frac{\Delta p_{\gamma}}{h}","Phase-momentum driven frequency alteration law","OBSERVER-LAYER",TRUE
+EQ-028,"\Delta p_{\gamma} = \int g(r)\,dr","Integrated medium pressure-drift linear force matrix","OBSERVER-LAYER",TRUE
+EQ-029,"\Delta \theta = \int \frac{g_{\perp}}{p_{\gamma}}\,ds","Angular signal deflection path deflection matrix","OBSERVER-LAYER",TRUE
+EQ-030,"\Delta \theta = \frac{4GM}{c^2 b}","Legacy vacuum general relativity deflection reference","OBSERVER-LAYER",TRUE
+EQ-031,"z_{obs} = z_{Doppler} + z_{grav}","Total composite observer redshift allocation structure","OBSERVER-LAYER",TRUE
+EQ-032,"z_{grav} = \frac{\Delta p_{\gamma}}{p_{\gamma}}","Pressure-drift induced metric redshift conversion","OBSERVER-LAYER",TRUE
+EQ-033,"r_h = r_s \cdot (1 + \Delta_{EOS})","Non-singular physical Halt Radius displacement equation","COLLAPSE-ENGINE",TRUE
+EQ-034,"\frac{dE}{dr} \to 0","Energy work gradient flattening inside collapse boundary","COLLAPSE-ENGINE",TRUE
+EQ-035,"\Delta E = \mu_B \cdot B \cdot m_s","Magnetic Zeeman state-splitting split energy delta","EM-FIELD",TRUE
+EQ-036,"\frac{P_{up}}{P_{down}} = \exp\left(-\frac{\Delta E}{kT}\right)","Thermal state occupancy population balance index","EM-FIELD",TRUE
+EQ-037,"h_{min} = 10^{-21}","Minimum numerical discretization metric floor limit","PROP-CORE",TRUE
+EQ-038,"S(f) = \int \rho(f,r)\,dr","Frequency power spectral density profiling matrix","DIAGNOSTICS",TRUE
+EQ-039,"dt_{obs} = dt_{ref} \cdot \sqrt{1 - \frac{2GM}{rc^2}}","Legacy warped coordinate time dilation reference","OBSERVER-LAYER",TRUE
+EQ-040,"\frac{dt_{obs}}{dt_{ref}} \approx 1","Rigid Euclidean spatial grid duration constraint","KINEMATICS",TRUE
+EQ-041,"f_{obs} = f_{emit} \cdot \left(1 + \frac{\Delta\Phi}{c^2}\right)","Standard linear transmission frequency baseline","OBSERVER-LAYER",TRUE
+EQ-042,"\mathbf{F}_M = \mathbf{J} \times \mathbf{B}","Bulk Lorentz force density acting on plasma medium","MHD-CORE",TRUE
+EQ-043,"\rho_m \frac{d\mathbf{v}}{dt} = -\nabla p + \mathbf{J} \times \mathbf{B}","Total fluid advection momentum balancing equation","MHD-CORE",TRUE
+EQ-044,"\frac{\partial \rho_m}{\partial t} + \nabla \cdot (\rho_m \mathbf{v}) = 0","Mass density conservation continuity expression","PROP-CORE",TRUE
+EQ-045,"\frac{\partial \mathbf{B}}{\partial t} = \nabla \times (\mathbf{v} \times \mathbf{B}) + \eta_m \nabla^2 \mathbf{B}","Magnetic induction field evolution with resistivity","MHD-CORE",TRUE
+EQ-046,"\nabla \cdot \mathbf{B} = 0","Absolute magnetic flux divergence constraint","EM-FIELD",TRUE
+EQ-047,"\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}","Faraday phase induction law baseline","EM-FIELD",TRUE
+EQ-048,"\nabla \times \mathbf{B} = \mu_0 \mathbf{J}","Ampere current density loop constraint (Low-Fr)","EM-FIELD",TRUE
+EQ-049,"p = k_B n T","Thermal ideal gas state kinetic pressure solver","MHD-CORE",TRUE
+EQ-050,"p_{deg} = K_1 \rho_m^{5/3}","Non-relativistic degenerate fermion pressure model","COLLAPSE-ENGINE",TRUE
+EQ-051,"p_{rel} = K_2 \rho_m^{4/3}","Relativistic degeneracy matter core ceiling limit","COLLAPSE-ENGINE",TRUE
+EQ-052,"\Delta T = \eta_{core} \cdot \mathbf{J}^2 \cdot \Delta t","Ohmic dissipation heating thermal drift factor","MHD-CORE",TRUE
+EQ-053,"S_{TP} = f(p, \rho_m, T)","Thermal-pressure stabilization tracking index","DIAGNOSTICS",TRUE
+EQ-054,"J_{shock} = \sigma_{cond} \cdot v_{shock} \times \mathbf{B}","Discontinuity shock front current generation profile","MHD-CORE",TRUE
+EQ-055,"\nu_{coll} = n \sigma v_{th}","Local particle collision frequency state function","PROP-CORE",TRUE
+EQ-056,"\lambda_{mfp} = \frac{1}{n \sigma}","Mean free path medium density length limit","PROP-CORE",TRUE
+EQ-057,"\tau_{diff} = \frac{L^2}{D_{eff}}","Magnetic flux diffusion temporal timescale metric","MHD-CORE",TRUE
+EQ-058,"R_m = \frac{L v}{\eta_m}","Dimensionless Magnetic Reynolds advection ratio","MHD-CORE",TRUE
+EQ-059,"\beta = \frac{p}{B^2 / (2\mu_0)}","Local plasma thermal-to-magnetic pressure ratio","MHD-CORE",TRUE
+EQ-060,"v_A = \frac{B}{\sqrt{\mu_0 \rho_m}}","Alfvén velocity wave propagation speed baseline","MHD-CORE",TRUE
+EQ-061,"v_s = \sqrt{\gamma \frac{p}{\rho_m}}","Local acoustic compression sound speed tracker","MHD-CORE",TRUE
+EQ-062,"\mathbf{q} = -\kappa_{th} \nabla T","Thermal flux conductive vector mapping law","PROP-CORE",TRUE
+EQ-063,"\varepsilon_{rad} = \alpha_{brem} n^2 \sqrt{T}","Bremsstrahlung radiative cooling emission profile","EM-FIELD",TRUE
+EQ-064,"\sigma_{cond} = \frac{n e^2}{m_e \nu_{coll}}","Effective electrical conductivity medium constant","PROP-CORE",TRUE
+EQ-065,"\chi_{corridor} = H(r - r_h)","Heaviside spatial corridor filtering parameter","KINEMATICS",TRUE
+EQ-066,"w(s) = \exp(-\tau(s))","Signal attenuation distance weight factor","OBSERVER-LAYER",TRUE
+EQ-067,"\Phi = -\int \frac{G \rho_m}{r}\,dV","Newtonian mass field energy potential anchor","KINEMATICS",TRUE
+EQ-068,"a_{prop} = g(r) \cdot \alpha","Modified propagation acceleration scaling vector","KINEMATICS",TRUE
+EQ-069,"\Gamma_{breach} = \frac{T_{max}}{L_{min}}","Critical gradient containment breakdown ceiling","DIAGNOSTICS",TRUE
+EQ-070,"\Lambda_{rec} = \frac{S_{target}}{\tau_{rec}}","Minimum threshold for phase restoration timing","EM-FIELD",TRUE
+EQ-071,"E_{meas} = \hbar \omega_{obs}","Measured signal quantum packet energy state","OBSERVER-LAYER",TRUE
+EQ-072,"E_{ref} = \hbar \omega_{emit}","Emitted reference frame source energy standard","OBSERVER-LAYER",TRUE
+EQ-073,"L_{meas} = v_{eff} \cdot \Delta t_{obs}","Measured path interval length spatial matrix","KINEMATICS",TRUE
+EQ-074,"L_{ref} = c \cdot \Delta t_{ref}","Standard universal vacuum length baseline metric","KINEMATICS",TRUE
+EQ-075,"\beta_{drift} = \frac{v_{drift}}{c}","Normalized relative tracking speed drift ratio","KINEMATICS",TRUE
+EQ-076,"\gamma_{drift} = \frac{1}{\sqrt{1 - \beta_{drift}^2}}","Standard kinematic scaling drift factor component","KINEMATICS",TRUE
+EQ-077,"p_{tot} = p_{gas} + p_{rad} + p_{mag}","Total composite systemic pressure balance solver","MHD-CORE",TRUE
+EQ-078,"U_{tot} = \rho_m c^2 + \frac{3}{2}p","Total interior energy density state tracker","PROP-CORE",TRUE
+EQ-079,"\nabla^2 \Phi_E = \frac{\rho_e}{\varepsilon_0}","Electrostatic field distribution potential solver","EM-FIELD",TRUE
+EQ-080,"\mathbf{E} = -\nabla \Phi_E - \frac{\partial \mathbf{A}}{\partial t}","Total vector electrodynamic field formulation","EM-FIELD",TRUE
+EQ-081,"\mathbf{B} = \nabla \times \mathbf{A}","Vector magnetic potential translation constraint","EM-FIELD",TRUE
+EQ-082,"\mathbf{S} = \frac{1}{\mu_0}(\mathbf{E} \times \mathbf{B})","Raw direction Poynting energy flux vector","EM-FIELD",TRUE
+EQ-083,"u_{field} = \frac{1}{2}\varepsilon_0 \mathbf{E}^2 + \frac{1}{2\mu_0}\mathbf{B}^2","Localized field configuration energy storage tracker","EM-FIELD",TRUE
+EQ-084,"\frac{\partial u_{field}}{\partial t} + \nabla \cdot \mathbf{S} = -\mathbf{J} \cdot \mathbf{E}","Electrodynamic field energy conservation balance","EM-FIELD",TRUE
+EQ-085,"w_{wave} = k_\mu x^\mu - \omega t","Baseline wave propagation phase tracker profile","PROP-CORE",TRUE
+EQ-086,"T^{\mu\nu}_{MHD} = (p + u_{field})g^{\mu\nu} + \rho_m v^\mu v^\nu","Total bulk material stress energy collection matrix","MHD-CORE",TRUE
+EQ-087,"P_{brake} = -\zeta_{visc} \nabla \cdot \mathbf{v}","Bulk medium viscous pressure brake function","MHD-CORE",TRUE
+EQ-088,"\tau_{visc} = \eta_{shear} \left(\nabla \mathbf{v} + (\nabla \mathbf{v})^T\right)","Shear stress distortion matrix tracking profile","MHD-CORE",TRUE
+EQ-089,"Q_{heating} = \tau_{visc} : \nabla \mathbf{v}","Viscous kinetic energy heating conversion rate","MHD-CORE",TRUE
+EQ-090,"dE_{loss} = \left(\frac{dE}{dx}\right) dx","Differential energy drop over pathway distance","PROP-CORE",TRUE
+EQ-091,"m_{eff} = m_0 \cdot \gamma_{drift}","Effective moving mass velocity inertia factor","KINEMATICS",TRUE
+EQ-092,"p_{\gamma} = \frac{E_{\gamma}}{c}","Linear radiant momentum interaction force law","OBSERVER-LAYER",TRUE
+EQ-093,"g_{\perp} = g(r) \cdot \sin(\theta_{inc})","Perpendicular gravity tracking vector projection","OBSERVER-LAYER",TRUE
+EQ-094,"b = r_{min} \cdot \sqrt{1 - \frac{2\Phi}{c^2}}","Effective diagnostic track impact parameters","OBSERVER-LAYER",TRUE
+EQ-095,"z_{Doppler} = \sqrt{\frac{1+\beta}{1-\beta}} - 1","Standard velocity motion redshift allocation law","OBSERVER-LAYER",TRUE
+EQ-096,"\Omega_{eff} = \Omega_0 \cdot \left(1 + \beta_{rot} T + \gamma_{rot} \alpha\right)","Effective rotational frequency modulation response","ROT-DYNAMICS",TRUE
+EQ-097,"\alpha_{rot} = f(\mathbf{B}, \mathbf{E}, \rho_m)","Rotational coupling efficacy variation parameter","ROT-DYNAMICS",TRUE
+EQ-098,"\Delta\Omega_{spin} = \Omega_{core} - \Omega_{shell}","Torsional shear differential spin misalignment vector","ROT-DYNAMICS",TRUE
+EQ-099,"\rho_{max} = 1.02 \times 10^{18} \text{ kg/m}^3","Trinca Maximum Mass Density Constant of the universe","COLLAPSE-ENGINE",TRUE
+EQ-100,"P_{deg} \to \infty \text{ as } \rho_m \to \rho_{max}","Quark degeneracy pressure ceiling constraint","COLLAPSE-ENGINE",TRUE
+EQ-101,"\frac{d\mathbf{v}_{collapse}}{dt} \to 0 \text{ at } r = r_h","Collapse arrest velocity stopping formulation","COLLAPSE-ENGINE",TRUE
+EQ-102,"r_h = \frac{2GM}{c^2}\left(1 + \sqrt{1 - a_*^2}\right)^{-1} \cdot (1 + \Delta_{EOS})","Kerr physical halt boundary radius offset matrix","COLLAPSE-ENGINE",TRUE
+EQ-103,"\Delta_{EOS} = \psi(\rho_{max}, T, \mathbf{B})","Medium-driven equation of state delta shift factor","COLLAPSE-ENGINE",TRUE
+EQ-104,"\Delta t_{delay} = \int_{r_h}^{r_{obs}} \left(\frac{1}{v_{eff}(r)} - \frac{1}{c}\right) dr","Timing-lift propagation latency integral equation","OBSERVER-LAYER",TRUE
+EQ-105,"v_{eff}(r) = c \cdot \sqrt{1 - \frac{\omega_p^2}{\omega_\gamma^2}}","Medium-modified effective photon propagation group velocity","PROP-CORE",TRUE
+EQ-106,"\Delta t_{LIGO} \approx 1.7 \text{ seconds}","Target baseline EM-to-GW escape propagation delay constant","OBSERVER-LAYER",TRUE
+EQ-107,"\mathbf{v}_{out}(t) = -\mathbf{v}_{collapse}(t_{arrest} - t)","Collapse-arrest structural reversal tracking trajectory","COLLAPSE-ENGINE",TRUE
+EQ-108,"E_{burst} = \int \varepsilon_{rad} \cdot \chi_{escape}(s)\,dV","Outward non-singular photon-burst energy release signature","EM-FIELD",TRUE
+EQ-109,"\chi_{escape}(s) = \Theta(\omega_\gamma - \omega_p)","Wavefront escape corridor transmission window filter","PROP-CORE",TRUE
+EQ-110,"\mathcal{M}_{lock} = \sum | \Delta_{validation} | \to 0","Cross-series SIM/SIMX/GV global stability confirmation index","DIAGNOSTICS",TRUE
+EQ-111,"\text{Status} = \text{CLOSED\_CANON\_SET}","Final immutable ledger system activation freeze flag","DIAGNOSTICS",TRUE
